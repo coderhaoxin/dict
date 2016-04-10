@@ -19,7 +19,13 @@ func query(word string) {
 	}
 
 	doc.Find("span.def").Each(func(i int, s *goquery.Selection) {
-		text := s.Find("a, span").Text()
-		fmt.Println(text)
+		pos := s.Parent().Find("span.pos").Text()
+		def := s.Find("a, span").Text()
+
+		if pos != "" {
+			fmt.Printf("%s - %s \n", pos, def)
+		} else {
+			fmt.Println(def)
+		}
 	})
 }

@@ -5,7 +5,7 @@
 
 ### dict
 
-dictionary on terminal :gun:
+:beers: dictionary on terminal :gun:
 
 ### Install
 
