@@ -18,6 +18,7 @@ func query(word string) {
 		fmt.Printf("query error: %v", err)
 	}
 
+	// word
 	doc.Find("span.def").Each(func(i int, s *goquery.Selection) {
 		pos := s.Parent().Find("span.pos").Text()
 		def := s.Find("a, span").Text()
@@ -27,5 +28,11 @@ func query(word string) {
 		} else {
 			fmt.Println(def)
 		}
+	})
+
+	// sentence
+	doc.Find("div.p1-11").Each(func(i int, s *goquery.Selection) {
+		sen := s.Find("a, span").Text()
+		fmt.Println(sen)
 	})
 }

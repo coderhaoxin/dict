@@ -15,7 +15,7 @@ var config = Config{
 	},
 }
 
-const version = "0.2.0"
+const version = "0.3.0"
 const usage = `
   Usage:
     dict <word>
