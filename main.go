@@ -15,7 +15,7 @@ var config = Config{
 	},
 }
 
-const version = "0.3.0"
+const version = "0.3.1"
 const usage = `
   Usage:
     dict <word>
@@ -32,6 +32,9 @@ func main() {
 	// https://github.com/docopt/docopt.go/issues/26 BUG!!!
 	// args, err := docopt.Parse(usage, os.Args[1:], true, version, false)
 	// fmt.Println(err)
+	if len(os.Args) < 2 {
+		return
+	}
 	word := os.Args[1]
 	query(word)
 }
